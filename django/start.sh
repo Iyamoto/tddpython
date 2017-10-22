@@ -5,4 +5,4 @@ cd /vagrant/django/
 cd superlists
 # python manage.py startapp lists
 python manage.py test
-# python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:8000
