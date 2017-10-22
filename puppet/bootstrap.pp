@@ -10,6 +10,14 @@ package { 'git':
   ensure  => installed,
 }
 
+package { 'wget':
+  ensure  => installed,
+}
+
+package { 'jq':
+  ensure  => installed,
+}
+
 package { 'python':
   ensure  => installed,
 }
