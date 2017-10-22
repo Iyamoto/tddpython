@@ -7,3 +7,5 @@
 3. vagrant up tdd
 
 ## TODO
+
+add to settings.py ALLOWED_HOSTS = ['10.100.100.110']

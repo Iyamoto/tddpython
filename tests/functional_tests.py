@@ -11,5 +11,5 @@ browser.get(djangourl)
 try:
     assert 'Django' in browser.title
 except:
-    browser.quit()
+    # browser.quit()
     raise
