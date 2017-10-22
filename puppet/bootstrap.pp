@@ -27,7 +27,7 @@ package { 'python-pip':
   require  => [ Package['python'], ],
 }
 
-ensure_packages(['requests'], {
+ensure_packages(['requests', 'django', 'selenium'], {
          ensure   => present,
          provider => 'pip',
          require  => [ Package['python-pip'], ],
