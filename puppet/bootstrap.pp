@@ -1,7 +1,5 @@
 # Bootstrap
 
-include stdlib
-
 notify { 'greeting':
   message => 'Starting Puppet'
 }
@@ -27,8 +25,15 @@ package { 'python-pip':
   require  => [ Package['python'], ],
 }
 
-ensure_packages(['requests', 'django', 'selenium'], {
-         ensure   => present,
-         provider => 'pip',
-         require  => [ Package['python-pip'], ],
-  })
+package { 'requests':
+  provider => pip,
+  ensure  => installed,
+  require  => Package['python-pip']
+}
+
+package { 'django':
+  provider => pip,
+  ensure  => installed,
+  require  => Package['python-pip']
+}
+
