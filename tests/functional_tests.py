@@ -8,4 +8,8 @@ djangourl = 'http://{}:8000'.format(djangoip)
 browser = webdriver.Chrome()
 browser.get(djangourl)
 
-assert 'Django' in browser.title
+try:
+    assert 'Django' in browser.title
+except:
+    browser.quit()
+    raise
