@@ -5,6 +5,7 @@ import unittest
 djangoip = '10.100.100.110'
 djangourl = 'http://{}:8000'.format(djangoip)
 
+
 class NewVisitorTest(unittest.TestCase):
     def setUp(self):
         self.browser = webdriver.Chrome()
