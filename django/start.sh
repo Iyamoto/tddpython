@@ -22,10 +22,10 @@ unittestresult=$?
 # Run server
 if [ ${unittestresult} -eq 0 ]; then
     # Django web server
-    python manage.py runserver 127.0.0.1:8000
+    # python manage.py runserver 127.0.0.1:8000
 
     # Gunicorn
-    # gunicorn --env DJANGO_SETTINGS_MODULE=${project}.settings ${project}.wsgi -w 4 -b :8000
+    gunicorn --env DJANGO_SETTINGS_MODULE=${project}.settings ${project}.wsgi -w 4 -b :8000
 fi
 
 # Run functional tests
