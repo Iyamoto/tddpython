@@ -8,4 +8,5 @@
 
 ## TODO
 
-add to settings.py ALLOWED_HOSTS = ['10.100.100.110']
+copy nginx/nginx.conf to /etc/nginx/
+# add to settings.py ALLOWED_HOSTS = ['10.100.100.110']
