@@ -37,3 +37,13 @@ package { 'django':
   require  => Package['python-pip']
 }
 
+package { 'nginx':
+  ensure  => installed,
+}
+
+service { 'nginx':
+  enable => 'true',
+  ensure => 'running',
+  require  => Package['nginx'],
+}
+
