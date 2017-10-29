@@ -12,6 +12,9 @@ cd ${project}
 rm db.sqlite3
 python manage.py migrate --noinput
 
+# Copy static files
+python manage.py collectstatic --noinput
+
 # Run unit tests
 python manage.py test
 unittestresult=$?
