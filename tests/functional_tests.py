@@ -13,6 +13,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser = webdriver.Chrome()
         self.djangoip = '10.100.100.110'
         self.djangourl = 'http://{}:8000'.format(self.djangoip)
+        print(self.djangourl)
 
     def tearDown(self):
         self.browser.quit()
