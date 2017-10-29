@@ -11,8 +11,11 @@ python manage.py migrate --noinput
 
 # Run unit tests
 python manage.py test
+unittestresult=$?
 
 # Run server
-python manage.py runserver 0.0.0.0:8000
+if [ ${unittestresult} -eq 0 ]; then
+    python manage.py runserver 0.0.0.0:8000
+fi
 
 # Run functional tests
