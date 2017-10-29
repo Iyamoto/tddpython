@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+project='superlists'
+
 cd /vagrant/django/
-# django-admin startproject superlists
-cd superlists
+# django-admin startproject ${project}
+cd ${project}
 # python manage.py startapp lists
 
 # Clear DB
@@ -15,7 +17,10 @@ unittestresult=$?
 
 # Run server
 if [ ${unittestresult} -eq 0 ]; then
-    python manage.py runserver 0.0.0.0:8000
+    # Django web server
+    # python manage.py runserver 0.0.0.0:8000
+    # Gunicorn
+    gunicorn --env DJANGO_SETTINGS_MODULE=${project}.settings ${project}.wsgi -w 4 -b :8000
 fi
 
 # Run functional tests
